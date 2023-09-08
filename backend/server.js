@@ -4,7 +4,7 @@ import { connectDatabase } from "./config/database.js";
 import cloudinary from "cloudinary";
 
 const PORT = process.env.PORT || 5000;
-dotenv.config({path: "./backend/config/config.env"});
+dotenv.config({path: "./config/config.env"});
 
 connectDatabase();
 

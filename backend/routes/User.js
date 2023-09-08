@@ -32,3 +32,4 @@ userRouter.route("/admin/project/:id").delete(isAuthenticated,deleteProject);
 
 
 userRouter.route("/contact").post(contact);
+
