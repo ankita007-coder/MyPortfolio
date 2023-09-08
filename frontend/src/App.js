@@ -48,8 +48,6 @@ function App() {
         </div>
     </div>):
 
-        loading ? <div>Loading...</div>:
-
           ( 
             <>
               <Header/>
