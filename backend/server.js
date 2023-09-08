@@ -5,7 +5,7 @@ import cloudinary from "cloudinary";
 import cors from "cors"; // Import the CORS middleware
 
 const PORT = process.env.PORT || 5000;
-dotenv.config({ path: "./config/config.env" });
+dotenv.config();
 
 connectDatabase();
 
