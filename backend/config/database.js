@@ -2,13 +2,13 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 
-export const connectDatabase = async()=>{
+export const connectDatabase = async () => {
     mongoose.set('strictQuery', true);
-    await mongoose.connect(process.env.MONGO_URL).then(c=>{
-        console.log(`Mongodb connected to ${c.connection.host}`);
-    })
-    .catch(err=>{
-        console.log(err);
-    })
-}
-
+    try {
+      await mongoose.connect(process.env.MONGO_URL);
+      console.log(`MongoDB connected to ${mongoose.connection.host}`);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  
