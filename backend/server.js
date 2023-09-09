@@ -1,8 +1,8 @@
 import { app } from "./app.js";
 import dotenv from "dotenv";
-import { connectDatabase } from "./config/database.js";
 import cloudinary from "cloudinary";
 import cors from "cors"; // Import the CORS middleware
+import { connectDatabase } from "./database.js";
 
 const PORT = process.env.PORT || 5000;
 dotenv.config();
