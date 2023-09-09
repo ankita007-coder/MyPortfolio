@@ -7,7 +7,7 @@ export const getUser = ()=> async(dispatch)=>{
         dispatch({
             type: "GET_USER_REQUEST",
         });
-        const {data} = await axios.get("/api/v1/user");
+        const {data} = await axios.get("/api/v1/user",{withCredentials: true});
         dispatch({
             type: "GET_USER_SUCCESS",
             payload: data.user,
@@ -32,7 +32,7 @@ export const login = (email,password)=> async(dispatch)=>{
         },{
             headers: {
                 "Content-Type": "application/json"
-            }
+            },withCredentials: true, 
         });
         dispatch({
             type: "LOGIN_SUCCESS",
@@ -52,7 +52,7 @@ export const logout = ()=> async(dispatch)=>{
         dispatch({
             type: "LOGOUT_REQUEST",
         });
-        const {data} = await axios.get("/api/v1/logout");
+        const {data} = await axios.get("/api/v1/logout",{withCredentials: true});
         dispatch({
             type: "LOGOUT_SUCCESS",
             payload: data.message,
@@ -71,7 +71,7 @@ export const loadUser = ()=> async(dispatch)=>{
         dispatch({
             type: "LOAD_USER_REQUEST",
         });
-        const {data} = await axios.get("/api/v1/me");
+        const {data} = await axios.get("/api/v1/me",{withCredentials: true});
         dispatch({
             type: "LOAD_USER_SUCCESS",
             payload: data.user,
@@ -100,7 +100,7 @@ export const updateUser = (name, email, password, skills, about)=>async(dispatch
         },{
             headers: {
                 "Content-Type": "application/json"
-            }
+            },withCredentials: true
         });
         dispatch({
             type: "UPDATE_USER_SUCCESS",
@@ -128,7 +128,7 @@ export const addTimeline = (title, description, date)=>async(dispatch)=>{
         },{
             headers: {
                 "Content-Type": "application/json"
-            }
+            },withCredentials: true
         });
         dispatch({
             type: "ADD_TIMELINE_SUCCESS",
@@ -149,7 +149,7 @@ export const deleteTimeline = (id)=>async(dispatch)=>{
             type: "DELETE_TIMELINE_REQUEST",
         });
         const {data} = await axios
-        .delete(`/api/v1/admin/timeline/${id}`);
+        .delete(`/api/v1/admin/timeline/${id}`,{withCredentials: true});
         dispatch({
             type: "DELETE_TIMELINE_SUCCESS",
             payload: data.message,
@@ -178,7 +178,7 @@ export const addProject = (url, title, image, description, techStack )=>async(di
         },{
             headers: {
                 "Content-Type": "application/json"
-            }
+            },withCredentials: true
         });
         dispatch({
             type: "ADD_PROJECT_SUCCESS",
@@ -199,7 +199,7 @@ export const deleteProject = (id)=>async(dispatch)=>{
             type: "DELETE_PROJECT_REQUEST",
         });
         const {data} = await axios
-        .delete(`/api/v1/admin/project/${id}`);
+        .delete(`/api/v1/admin/project/${id}`,{withCredentials: true});
         dispatch({
             type: "DELETE_PROJECT_SUCCESS",
             payload: data.message,
@@ -226,7 +226,7 @@ export const contactUs = (name, email, message)=>async(dispatch)=>{
         },{
             headers: {
                 "Content-Type": "application/json"
-            }
+            },withCredentials: true
         });
         dispatch({
             type: "CONTACT_US_SUCCESS",
