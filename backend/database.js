@@ -6,6 +6,7 @@ dotenv.config();
 
 // Function to connect to the MongoDB database
 export const connectDatabase = async () => {
+  mongoose.set('strictQuery', false);
   try {
     await mongoose.connect('mongodb+srv://ankitabudhia:anku030205@cluster0.r1w1rrq.mongodb.net/portfolio?retryWrites=true&w=majority', {
       useNewUrlParser: true,
